@@ -1,0 +1,19 @@
+.container{
+    /* background-color: aqua;     */
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+
+.row > div{
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.col{
+    border: 2px solid rgba(128, 128, 128, 0.258);
+    border-radius: 5px;
+}
