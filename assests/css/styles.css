@@ -5,7 +5,7 @@
 }
 
 
-.row > div{
+#word-guesses >.row > div{
     width: 90px;
     display: flex;
     justify-content: center;
@@ -16,4 +16,9 @@
 .col{
     border: 2px solid rgba(128, 128, 128, 0.258);
     border-radius: 5px;
+}
+
+#keyboard > .row > div {
+    background-color: rgba(128, 128, 128, 0.258);
+    margin-top: 5px;
 }
