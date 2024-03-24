@@ -16,9 +16,12 @@
 .col{
     border: 2px solid rgba(128, 128, 128, 0.258);
     border-radius: 5px;
+    
 }
 
 #keyboard > .row > div {
     background-color: rgba(128, 128, 128, 0.258);
     margin-top: 5px;
+    width: 64px !important; /*this isn't working - maybe to do with col*/
+    height: 27.5px !important;
 }
