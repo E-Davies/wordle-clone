@@ -1,27 +1,91 @@
-.container{
-    /* background-color: aqua;     */
-    margin-top: 3rem;
-    padding: 1rem;
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1em;
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem); /*.5rem in the min font size, 2.5vmin to scale based off browser size, 1.5rem is max font size*/
+}
 
-#word-guesses >.row > div{
-    width: 90px;
+#keyboard{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(20, minmax(auto, 1.25em));
+    grid-auto-rows: 3em;
+    gap: .25em;
+    justify-content: center;
+}
+
+.key{
+    font-size: inherit;
+    grid-column: span 2;
+    border: none;
+    border-radius: .25em;
+    background-color: hsl(
+        var(--hue, 200), 
+        var(--saturation, 1%), 
+        calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+        );
+    color: white;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    user-select: none; /*stops user selecting/highlighting writing of the keys*/
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-.col{
+.key.large{
+    grid-column: span 3;
+}
+
+.key:hover, .key:focus{
+    --lightness-offset: 10%;
+}
+
+.key.wrong{
+    --lightness: 23%
+}
+
+.key.wrong-location{
+    --hue: 49;
+    --saturation: 51%;
+    --lightness: 47%
+}
+
+.key.correct{
+    --hue: 115;
+    --saturation: 29%;
+    --lightness: 53%
+}
+
+
+#guess-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 5em); /*5 columns each 5em wide*/
+    grid-template-rows: repeat(6, 5em);
+    gap: .25em;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+}
+
+
+.tile{
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid rgba(128, 128, 128, 0.258);
-    border-radius: 5px;
-    
-}
-
-#keyboard > .row > div {
-    background-color: rgba(128, 128, 128, 0.258);
-    margin-top: 5px;
-    width: 64px !important; /*this isn't working - maybe to do with col*/
-    height: 27.5px !important;
+    border-radius: .25em;
+    font-size: 2em;
+    font-weight: 500;
+    user-select: none;
+    text-transform: uppercase;
 }
