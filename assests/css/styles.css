@@ -1,6 +1,7 @@
 *, *::after, *::before{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
 }
 
 body {
@@ -29,9 +30,10 @@ body {
     background-color: hsl(
         var(--hue, 200), 
         var(--saturation, 1%), 
-        calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+        calc(var(--lightness-offset, 0%) + var(--lightness, 70%))
         );
-    color: white;
+    /* background-color: hsl(200, 1%, 51%); */
+    color: black;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -50,19 +52,22 @@ body {
 }
 
 .key.wrong{
-    --lightness: 23%
+    --lightness: 40%;
+    color: white;
 }
 
 .key.wrong-location{
     --hue: 49;
     --saturation: 51%;
-    --lightness: 47%
+    --lightness: 47%;
+    color: white;
 }
 
 .key.correct{
     --hue: 115;
     --saturation: 29%;
-    --lightness: 53%
+    --lightness: 53%;
+    color: white;
 }
 
 
