@@ -132,6 +132,7 @@ function flipTile(tile, index, array, guess) {
         }else{
             tile.dataset.state="wrong";
             key.classList.add("wrong");
+            // key.disabled=true;
         }
 
         if(index === array.length - 1){
@@ -178,7 +179,14 @@ function checkWinLose(guess, tiles) {
         danceTiles(tiles);
         stopInteraction();
         return;
-    }
+    };
+
+    const remainingTile = guessGrid.querySelectorAll(":not([data-letter])")
+
+    if(remainingTile.length === 0) {
+        showAlert(`You lose, the answer is: ${targetWord.toUpperCase()}`, null);
+        stopInteraction();
+    };
 };
 
 function danceTiles(tiles) {
