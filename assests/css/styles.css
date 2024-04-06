@@ -1,7 +1,6 @@
 *, *::after, *::before{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
 }
 
 body {
@@ -10,7 +9,52 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 1em;
-    font-size: clamp(.5rem, 2.5vmin, 1.5rem); /*.5rem in the min font size, 2.5vmin to scale based off browser size, 1.5rem is max font size*/
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem); /*.5rem is the min font size, 2.5vmin to scale based off browser size, 1.5rem is max font size*/
+}
+
+#guess-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 4em); /*5 columns each 5em wide*/
+    grid-template-rows: repeat(6, 4em);
+    gap: .25em;
+    justify-content: center;
+    align-content: center;
+    /* flex-grow: 1; */
+}
+
+.tile{
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .07em solid hsl(200, 1%, 85%);
+    border-radius: .25em;
+    font-size: 2em;
+    font-weight: 700;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.tile[data-state="active"]{
+    border-color: hsl(200, 1%, 50%);
+}
+
+.tile[data-state="wrong"]{
+    background-color: hsl(200, 1%, 40%);
+    border: none;
+    color: white;
+}
+
+.tile[data-state="wrong-location"]{
+    background-color: hsl(49, 51%, 47%);
+    border: none;
+    color: white;
+}
+
+.tile[data-state="correct"]{
+    background-color: hsl(115, 29%, 53%);
+    border: none;
+    color: white;
 }
 
 #keyboard{
@@ -24,6 +68,7 @@ body {
 
 .key{
     font-size: inherit;
+    font-weight: 800;
     grid-column: span 2;
     border: none;
     border-radius: .25em;
@@ -32,7 +77,7 @@ body {
         var(--saturation, 1%), 
         calc(var(--lightness-offset, 0%) + var(--lightness, 70%))
         );
-    /* background-color: hsl(200, 1%, 51%); */
+    /* background-color: hsl(200, 1%, 70%); */
     color: black;
     padding: 0;
     display: flex;
@@ -71,26 +116,4 @@ body {
 }
 
 
-#guess-grid{
-    display: grid;
-    grid-template-columns: repeat(5, 5em); /*5 columns each 5em wide*/
-    grid-template-rows: repeat(6, 5em);
-    gap: .25em;
-    justify-content: center;
-    align-content: center;
-    flex-grow: 1;
-}
 
-
-.tile{
-    grid-column: span 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgba(128, 128, 128, 0.258);
-    border-radius: .25em;
-    font-size: 2em;
-    font-weight: 500;
-    user-select: none;
-    text-transform: uppercase;
-}

@@ -10,7 +10,7 @@
 
 <body>
     <main>
-        <div id="guess-grid">
+        <div id="guess-grid" data-guess-grid>
             
             <div class="tile" id="1-1"></div>
             <div class="tile" id="1-2"></div>
@@ -55,16 +55,16 @@
             <button class="key" data-key="Q"> Q </button>
             <button class="key" data-key="W"> W </button>
             <button class="key" data-key="E"> E </button>
-            <button class="key correct" data-key="R"> R </button>
+            <button class="key" data-key="R"> R </button>
             <button class="key" data-key="T"> T </button>
             <button class="key" data-key="Y"> Y </button>
-            <button class="key wrong-location" data-key="U"> U </button>
+            <button class="key" data-key="U"> U </button>
             <button class="key" data-key="I"> I </button>
             <button class="key" data-key="O"> O </button>
             <button class="key" data-key="P"> P </button>
 
             <div class="space"></div>
-            <button class="key wrong" data-key="A"> A </button>
+            <button class="key" data-key="A"> A </button>
             <button class="key" data-key="S"> S </button>
             <button class="key" data-key="D"> D </button>
             <button class="key" data-key="F"> F </button>
@@ -89,9 +89,13 @@
     </main>
 
 
+    <!-- day.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assests/js/index.js"></script>
+    <script src="./assests/js/targetWords.js"></script>
+    <script src="./assests/js/dictionary.js"></script>
+    <script src="./assests/js/script.js"></script>
 </body>
 
 </html>
