@@ -25,7 +25,8 @@ body {
 
 .alert{
     pointer-events: none;
-    background-color: hsl(210, 2%, 80%);
+    background-color: black;
+    color: white;
     border-radius: .25em;
     padding: .5em;
     opacity: 1;

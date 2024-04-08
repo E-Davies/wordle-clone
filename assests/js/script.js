@@ -1,9 +1,10 @@
 
-const today = dayjs()
-const index = today.diff('04-01-2024', 'day'); //chose a start date of 04-01-2024 and then get the no. of days diff from todays date - then use this to get a word from targetword array
-const targetWord = targetWords[index - 1];
-console.log(index)
-console.log(targetWord)
+
+const today = dayjs() // returns todays date using Day.js
+const index = today.diff('04-06-2024', 'day'); //choose a start date of 04-06-2024 and then get the no. of days diff from todays date - then use this as index to get a word from targetword array
+const targetWord = targetWords[index];
+// console.log(index)
+// console.log(targetWord)
 
 const keyboard = document.querySelector("[data-keyboard]");
 const guessGrid = document.querySelector("[data-guess-grid]");
@@ -69,8 +70,6 @@ function pressKey(key) {
     nextTile.dataset.state = "active";
     console.log([...getActiveTiles()])
 };
-
-
 
 function deleteKey() {
     const activeTiles = getActiveTiles();
